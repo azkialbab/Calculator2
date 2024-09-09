@@ -1,0 +1,544 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="197dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_mid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.557" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9820427" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="16dp"
+        android:text="7,500"
+        android:textColor="@color/abu"
+        android:textSize="50sp"
+        android:textStyle="bold">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="4dp"
+            android:text="15,000 - 7500"
+            android:textColor="@color/abu"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
+    </TextView>
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/row1"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_horizontal_top"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+        app:layout_constraintBottom_toTopOf="@+id/row2">
+
+        <!-- Button AC -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_ac"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_percent"
+            app:cardBackgroundColor="@color/orange"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="AC"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Button % -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_percent"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toEndOf="@+id/btn_ac"
+            app:layout_constraintEnd_toStartOf="@+id/btn_divide"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="%"
+                android:textStyle="bold"
+                android:textColor="@color/orange"
+                android:textSize="30sp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Button Divide -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_divide"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toEndOf="@+id/btn_percent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_multiply"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="/"
+                android:textStyle="bold"
+                android:textColor="@color/orange"
+                android:textSize="30sp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Button Multiply -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_multiply"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toEndOf="@+id/btn_divide"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="x"
+                android:textStyle="bold"
+                android:textColor="@color/orange"
+                android:textSize="30sp" />
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Rows for numbers (row2, row3, row4...) and symbols here -->
+    <!-- Equal Button that spans two rows -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/row2"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="92dp"
+        app:layout_constraintBottom_toTopOf="@+id/row3"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_horizontal_top">
+
+        <!-- Button 7 -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_7"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_8"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="7"
+                android:textColor="@color/abu"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Button 8 -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_8"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_9"
+            app:layout_constraintStart_toEndOf="@+id/btn_7">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="8"
+                android:textColor="@color/abu"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Button Divide -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_9"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+            app:layout_constraintStart_toEndOf="@+id/btn_8">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="9"
+                android:textColor="@color/abu"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Button Multiply -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_plus"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_9">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="+"
+                android:textColor="@color/orange"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/row3"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="188dp"
+        app:layout_constraintBottom_toTopOf="@+id/row4"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_horizontal_top">
+
+        <!-- Button 4 -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_4"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_5"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="4"
+                android:textColor="@color/abu"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Button 5-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_5"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_6"
+            app:layout_constraintStart_toEndOf="@+id/btn_4">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="5"
+                android:textColor="@color/abu"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Button 6 -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_6"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_minus"
+            app:layout_constraintStart_toEndOf="@+id/btn_5">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="6"
+                android:textColor="@color/abu"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Button minus-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_minus"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_6">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="@color/orange"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/row4"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="288dp"
+        app:layout_constraintBottom_toTopOf="@+id/row5"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_horizontal_top">
+
+        <!-- Button 1 -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_1"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_2"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/abu"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Button 2-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_2"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_3"
+            app:layout_constraintStart_toEndOf="@+id/btn_1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/abu"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Button 3 -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_3"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="@color/abu"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/row5"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="400dp"
+
+        app:layout_constraintEnd_toEndOf="@+id/guideline_vertical_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_horizontal_top">
+
+        <!-- Button 0-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_nol"
+            android:layout_width="190dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_dot"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/abu"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Button Dot-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_dot"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_equal"
+            app:layout_constraintStart_toEndOf="@+id/btn_nol">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="."
+                android:textColor="@color/abu"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Button Equal (Spans Two Rows) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/row6"
+        android:layout_width="100dp"
+        android:layout_height="210dp"
+        tools:layout_editor_absoluteX="315dp"
+        tools:layout_editor_absoluteY="486dp" >
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_equal"
+            android:layout_width="80dp"
+            android:layout_height="190dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/orange"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="8dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="2dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="="
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="6dp"
+                tools:layout_editor_absoluteY="-2dp" />
+
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
